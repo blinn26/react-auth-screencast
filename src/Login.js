@@ -1,29 +1,32 @@
-// Login.js
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as auth from "./auth.js";
 
-function Login() {
-    const [username, setUsername] = useState('');
+function Login({ setIsLoggedIn }) {
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState(''); 
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      if (!username || !password) {
+      if (!email || !password) {
         // handle invalid entries appropriately
         return;
       }
-      // make the appropriate api call -- see below
+      auth.authorize(email, password)
+        .then((res) => {
+          console.log(res);
+          setIsLoggedIn(true);
+        })
+        .catch(console.log);
   }
     return (
       <div className="login">
         <p className="login__welcome"></p>
         <form onSubmit={handleSubmit} className="login__form">
-          <label for="username">Username:</label>
-          <input id="username" required name="username" 
-             type="text" value={username} 
-             onChange={e => setUsername(e.target.value)}
+          <label for="email">Email:</label>
+          <input id="email" required name="email" 
+             type="text" value={email} 
+             onChange={e => setEmail(e.target.value)}
           />
           <label for="password">Password:</label>
           <input id="password" required name="password" 

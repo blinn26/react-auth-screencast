@@ -18,29 +18,28 @@ export const register = (username, email, password) => {
   })
   .then((res) => {
     // return the parsed data to client
-    // importantly, this data includes a unique, signed JWT
     return res;
   })
   // catch all errors
   .catch((err) => console.log(err));
 };
 
-export const authorize = (identifier, password) => {
-  return fetch(`${BASE_URL}/auth/local`, {
+export const authorize = (email, password) => {
+  return fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ identifier, password }),
+    body: JSON.stringify({ email, password }),
   })
     .then((response) => response.json())
     .then((data) => {
       // does data have a jwt in it?
-      if (data.jwt) {
+      if (data.token) {
         // if so, save it to local storage and return data
         // don't worry about this line now -- it will be explained soon
-        localStorage.setItem("jwt", data.jwt);
+        localStorage.setItem("token", data.token);
         return data;
       }
     })
