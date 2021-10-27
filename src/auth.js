@@ -1,5 +1,4 @@
-const BASE_URL = 'https://auth.nomoreparties.co';
-
+const BASE_URL = 'https://register.nomoreparties.co';
 export const register = (username, email, password) => {
   // your url will be different, of course
   return fetch(`${BASE_URL}/signup`, {
