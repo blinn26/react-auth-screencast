@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './styles.css';
 
 function Register() {
   // create necessary state variables
@@ -15,31 +16,31 @@ function Register() {
   // TODO onChange handlers
   return (
     <div className='register'>
-      <p className='register__welcome'>Please register.</p>
+      <h2>Please register</h2>
       <form className='register__form'>
         <label>Username: </label>
-        <input
+        <input class="register__input"
           name='username'
           type='text'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <label>Email: </label>
-        <input
+        <input class="register__input"
           name='email'
           type='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <label>Password: </label>
-        <input
+        <input class="register__input"
           name='password'
           type='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <label>Confirm Password: </label>
-        <input
+        <input class="register__input"
           name='confirm-password'
           type='password'
           value={confirmPassword}
@@ -47,7 +48,7 @@ function Register() {
         />
       </form>
       <div className='register__button-container'>
-        <button onClick={handleSubmit} className='register__link'>
+        <button onClick={handleSubmit} className='register__button'>
           Sign up
         </button>
       </div>

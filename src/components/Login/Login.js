@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './styles.css';
 
 function Login({ setIsLoggedIn }) {
   const [email, setEmail] = useState('');
@@ -13,10 +14,10 @@ function Login({ setIsLoggedIn }) {
   // TODO make onChange handlers not inline
   return (
     <div className='login'>
-      <p className='login__welcome'>Login please.</p>
+      <h2>Login please</h2>
       <form onSubmit={handleSubmit} className='login__form'>
         <label for='email'>Email: </label>
-        <input
+        <input class="login__input"
           id='email'
           required
           name='email'
@@ -25,7 +26,7 @@ function Login({ setIsLoggedIn }) {
           onChange={(e) => setEmail(e.target.value)}
         />
         <label for='password'>Password: </label>
-        <input
+        <input class="login__input"
           id='password'
           required
           name='password'
@@ -35,7 +36,7 @@ function Login({ setIsLoggedIn }) {
         />
       </form>
       <div className='login__button-container'>
-        <button type='submit' className='login__link'>
+        <button type='submit' className='login__button'>
           Log in
         </button>
         </div>
