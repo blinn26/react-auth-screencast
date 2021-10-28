@@ -1,11 +1,13 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Profile from './components/Profile/Profile';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
   return (
     <div className="app">
       <Switch>
@@ -13,10 +15,13 @@ function App() {
           <Register />
         </Route>
         <Route path="/login">
-          <Login  />
+          <Login />
         </Route>
         <Route path="/profile">
           <Profile />
+        </Route>
+        <Route path="/">
+          {isLoggedIn ? <Redirect to="/profile" /> : <Redirect to="/login" /> }
         </Route>
       </Switch>
     </div>

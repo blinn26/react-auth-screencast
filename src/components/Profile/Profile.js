@@ -2,6 +2,11 @@ import React from 'react';
 import './styles.css';
 
 function Profile() {
+
+  function signOut() {
+    // TODO
+  }
+
   return (
     <div class="profile">
       <h2>My Profile</h2>
@@ -13,6 +18,7 @@ function Profile() {
         <p class="profile__key">Email:</p>
         <p class="profile__value">kevin@mail.com</p>
       </div>
+      <button class="profile__signout-button">Signout</button>
     </div>
   );
 }
