@@ -1,6 +1,5 @@
 const BASE_URL = 'https://register.nomoreparties.co';
 export const register = (username, email, password) => {
-  // your url will be different, of course
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     headers: {
@@ -10,7 +9,7 @@ export const register = (username, email, password) => {
     body: JSON.stringify({ username, password, email })
   })
   .then((response) => {
-    // if response returns 201-created, parse the data and return to next handler
+    // if successful, parse the data and return to next handler
     if (response.status === 201){
       return response.json();
     } 
