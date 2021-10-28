@@ -33,12 +33,12 @@ function Login({ setIsLoggedIn }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <div className='login__button-container'>
-          <button type='submit' className='login__link'>
-            Log in
-          </button>
-        </div>
       </form>
+      <div className='login__button-container'>
+        <button type='submit' className='login__link'>
+          Log in
+        </button>
+        </div>
       <div className='login__signup'>
         <p>Not a member yet?</p>
         <Link to='/register' className='signup__link'>
