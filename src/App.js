@@ -18,7 +18,7 @@ function App() {
           <Login />
         </Route>
         <Route path="/profile">
-          <Profile />
+          {isLoggedIn ? <Profile /> : <Redirect to="/login" />}
         </Route>
         <Route path="/">
           {isLoggedIn ? <Redirect to="/profile" /> : <Redirect to="/login" /> }
