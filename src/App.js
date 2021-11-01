@@ -6,7 +6,7 @@ import Register from './components/Register/Register';
 import Profile from './components/Profile/Profile';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(true);
 
   return (
     <div className="app">
