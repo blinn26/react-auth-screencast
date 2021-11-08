@@ -21,7 +21,7 @@ function Register() {
         <label>
           {'Username: '}
           <input
-            class='register__input'
+            className='register__input'
             name='username'
             type='text'
             value={username}
@@ -31,7 +31,7 @@ function Register() {
         <label>
           {'Email: '}
           <input
-            class='register__input'
+            className='register__input'
             name='email'
             type='email'
             value={email}
@@ -41,7 +41,7 @@ function Register() {
         <label>
           {'Password: '}
           <input
-            class='register__input'
+            className='register__input'
             name='password'
             type='password'
             value={password}
@@ -51,7 +51,7 @@ function Register() {
         <label>
           {'Confirm Password: '}
           <input
-            class='register__input'
+            className='register__input'
             name='confirm-password'
             type='password'
             value={confirmPassword}

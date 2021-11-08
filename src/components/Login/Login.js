@@ -16,8 +16,9 @@ function Login({ setIsLoggedIn }) {
     <div className='login'>
       <h2>Login please</h2>
       <form onSubmit={handleSubmit} className='login__form'>
-        <label for='email'>Email: </label>
-        <input class="login__input"
+        <label htmlFor='email'>Email: </label>
+        <input
+          className='login__input'
           id='email'
           required
           name='email'
@@ -25,8 +26,9 @@ function Login({ setIsLoggedIn }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <label for='password'>Password: </label>
-        <input class="login__input"
+        <label htmlFor='password'>Password: </label>
+        <input
+          className='login__input'
           id='password'
           required
           name='password'
@@ -39,7 +41,7 @@ function Login({ setIsLoggedIn }) {
         <button type='submit' className='login__button'>
           Log in
         </button>
-        </div>
+      </div>
       <div className='login__signup'>
         <p>Not a member yet?</p>
         <Link to='/register' className='signup__link'>

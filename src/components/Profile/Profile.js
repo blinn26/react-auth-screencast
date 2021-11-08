@@ -2,23 +2,22 @@ import React from 'react';
 import './styles.css';
 
 function Profile() {
-
   function signOut() {
     // TODO
   }
 
   return (
-    <div class="profile">
+    <div className='profile'>
       <h2>My Profile</h2>
-      <div class="profile__item">
-        <p class="profile__key">Username:</p>
-        <p class="profile__value">Kevin</p>
+      <div className='profile__item'>
+        <p className='profile__key'>Username:</p>
+        <p className='profile__value'>Kevin</p>
       </div>
-      <div class="profile__item">
-        <p class="profile__key">Email:</p>
-        <p class="profile__value">kevin@mail.com</p>
+      <div className='profile__item'>
+        <p className='profile__key'>Email:</p>
+        <p className='profile__value'>kevin@mail.com</p>
       </div>
-      <button class="profile__signout-button">Signout</button>
+      <button className='profile__signout-button'>Signout</button>
     </div>
   );
 }
