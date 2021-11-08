@@ -18,34 +18,46 @@ function Register() {
     <div className='register'>
       <h2>Please register</h2>
       <form className='register__form'>
-        <label>Username: </label>
-        <input class="register__input"
-          name='username'
-          type='text'
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <label>Email: </label>
-        <input class="register__input"
-          name='email'
-          type='email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label>Password: </label>
-        <input class="register__input"
-          name='password'
-          type='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <label>Confirm Password: </label>
-        <input class="register__input"
-          name='confirm-password'
-          type='password'
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+        <label>
+          {'Username: '}
+          <input
+            class='register__input'
+            name='username'
+            type='text'
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </label>
+        <label>
+          {'Email: '}
+          <input
+            class='register__input'
+            name='email'
+            type='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </label>
+        <label>
+          {'Password: '}
+          <input
+            class='register__input'
+            name='password'
+            type='password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
+        <label>
+          {'Confirm Password: '}
+          <input
+            class='register__input'
+            name='confirm-password'
+            type='password'
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </label>
       </form>
       <div className='register__button-container'>
         <button onClick={handleSubmit} className='register__button'>

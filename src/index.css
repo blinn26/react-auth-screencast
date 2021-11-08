@@ -12,6 +12,12 @@ body {
   margin-top: 50px;
 }
 
+.register__form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 p {
   margin: 0;
 }
