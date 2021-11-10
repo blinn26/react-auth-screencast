@@ -3,17 +3,22 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 
 function Register() {
-  // create necessary state variables
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [values, setValues] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO
   };
-  // TODO onChange handlers
+
+  const handleChange = (event) => {
+    // TODO
+  };
+
   return (
     <div className='register'>
       <h2>Please register</h2>
@@ -23,9 +28,9 @@ function Register() {
           <input
             className='register__input'
             name='username'
+            value={values.username}
             type='text'
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={handleChange}
           />
         </label>
         <label>
@@ -33,9 +38,9 @@ function Register() {
           <input
             className='register__input'
             name='email'
+            value={values.email}
             type='email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleChange}
           />
         </label>
         <label>
@@ -43,19 +48,19 @@ function Register() {
           <input
             className='register__input'
             name='password'
+            value={values.password}
             type='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handleChange}
           />
         </label>
         <label>
           {'Confirm Password: '}
           <input
             className='register__input'
-            name='confirm-password'
+            name='confirmPassword'
+            value={values.confirmPassword}
             type='password'
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            onChange={handleChange}
           />
         </label>
       </form>
