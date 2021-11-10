@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+
+import * as auth from '../../utils/auth';
 import './styles.css';
 
 function Register() {
+  const history = useHistory();
+
   const [values, setValues] = useState({
     username: '',
     email: '',
@@ -12,11 +16,19 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO
+    if (values.password === values.confirmPassword) {
+      auth
+        .register(values)
+        .then((res) => {
+          history.push('/login');
+        })
+        .catch((err) => console.log(err));
+    }
   };
 
   const handleChange = (event) => {
-    // TODO
+    const { name, value } = event.target;
+    setValues({ ...values, [name]: value });
   };
 
   return (
