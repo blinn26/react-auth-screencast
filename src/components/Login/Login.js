@@ -11,7 +11,10 @@ function Login({ setIsLoggedIn }) {
     // TODO
   };
 
-  // TODO make onChange handlers not inline
+  const handleChange = (e) => {
+    // TODO
+  };
+
   return (
     <div className='login'>
       <h2>Login please</h2>
@@ -24,7 +27,7 @@ function Login({ setIsLoggedIn }) {
           name='email'
           type='text'
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleChange}
         />
         <label htmlFor='password'>Password: </label>
         <input
@@ -34,7 +37,7 @@ function Login({ setIsLoggedIn }) {
           name='password'
           type='password'
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={handleChange}
         />
       </form>
       <div className='login__button-container'>
